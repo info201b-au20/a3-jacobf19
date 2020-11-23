@@ -1,5 +1,6 @@
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library(tidyverse)
+library(ggplot2)
 library(maps)
 library(mapproj)
 incarceration_trends <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv")
@@ -117,7 +118,7 @@ bar_plot_jail_NY <- ggplot(bar_plot_gathered, aes(x = year, y = Value, fill = St
 
 state_shape <- map_data("state") %>% 
   rename(state = region)
-  left_join(state_pretrial_sum,state_shape, by = "state")
+state_shape <- left_join(state_pretrial_sum,state_shape, by = "state")
 
 US_Pretrial_Map <- ggplot(state_shape) +
   geom_polygon(
