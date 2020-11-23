@@ -1,0 +1,27 @@
+---
+title: "Assignment 3"
+author: "Jake Fell"
+output: html_document
+---
+```{r include=FALSE}
+source("analysis.R")
+```
+
+##Introduction
+This report is based on a [dataset](https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv) from the Vera Institute, focusing on incarceration in the United States. This specific study focuses on overall jail population in US Counties, specifically New York County, as well as pretrial data for US Counties and subsequently states. It also looks at the proportion of pretrial populations to the larger jail and total county populations. This information is of note due to the status of persons in pretrial. In some cases these are innocent people and it is important to understand the data of how many of these people are in pretrial and how that compares to persons actually convicted of an offense.
+
+##Variables
+After analyzing the data, there were a number of variables of interest in the dataset. The jail with the most convicted inmates in the US has `r max_jail_pop` inmates, at `'r max_jail_pop_county`, while the jail with the most pretrial inmates has `r max_pretrial` at `max_pretrial_county` in `max_pretrial_year`. Using this information, I decided to take a look at one of the biggest counties in the country for comparison: New York County.
+
+##New York Total Jail Population
+```{r echo = FALSE}
+NY_County_Prisons_Graph
+```
+##New York Jail Population vs. Pretrial Population
+```{r echo = FALSE}
+bar_plot_jail_NY
+```
+##Total Population of Pretrial Persons in US States in 2018.
+```{r echo = FALSE}
+US_Pretrial_Map
+```
