@@ -1,6 +1,5 @@
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library(tidyverse)
-library(ggplot2)
 library(maps)
 library(mapproj)
 incarceration_trends <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv")
